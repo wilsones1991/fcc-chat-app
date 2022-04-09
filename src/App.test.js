@@ -1,8 +1,14 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+import chat from './reducers'
+
+const store = createStore(chat)
+ 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>, getElementById('root')
+)
