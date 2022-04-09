@@ -5,7 +5,7 @@ They are creating an object for the reducer to then figure out how to change the
 import * as types from "../constants/ActionTypes.js"
 
 let nextMessageId = 0
-const nextUserId = 0
+let nextUserId = 0
 
 // Action creator when current user is creating a message
 export const addMessage = (message, author) => ({
